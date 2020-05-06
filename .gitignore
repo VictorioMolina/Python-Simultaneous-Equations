@@ -1,1 +1,2 @@
-.syproject
+.syproject/
+src/__pycache__/
