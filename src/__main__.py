@@ -11,9 +11,9 @@ import numpy as np
 from simultaneous_equations import SimultaneousEquations
 
 def main():
-    se = SimultaneousEquations(file="file.txt")
+    se = SimultaneousEquations(file="../docs/file.txt")
     se.solve()
-    se.save_to_file("solution.txt")
+    se.save_to_file("../docs/solution.txt")
     
 if __name__ == '__main__':
     main()

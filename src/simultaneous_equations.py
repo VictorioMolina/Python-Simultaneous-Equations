@@ -19,7 +19,7 @@ class SimultaneousEquations:
         assert len(kwargs) <= 2,\
             'The matrix/vector and file parameters are exclusive'
         
-        self.solution = None
+        self.solution = []
             
         if 'file' in kwargs:
             self.file = kwargs['file']
@@ -45,7 +45,6 @@ class SimultaneousEquations:
                 vector_as_list = []
                 with open(self.file) as f:
                     for line in f:
-                        print("line", line)
                         if len(matrix_as_list) < 3:
                             matrix_as_list.append([float(n) for n in line.split()])
                         else:
@@ -63,7 +62,7 @@ class SimultaneousEquations:
          save = input('Do you really want to exit ([y]/n)? ')
          if save == 'y':
              with open(file, 'w') as f:
-                 if self.solution.all():
+                 if len(self.solution) > 0:
                      f.write(str(self.solution))
                  else:
                      f.write('No se ha resuelto el sistema.')
